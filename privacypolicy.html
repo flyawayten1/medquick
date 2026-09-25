@@ -1,0 +1,559 @@
+```html
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>個人情報の取り扱い | MedQuick</title>
+
+    <meta name="description" content="MedQuickにおける個人情報および医療情報の取り扱いについてご案内します。">
+
+    <style>
+        :root {
+            --primary: #1976d2;
+            --primary-light: #eaf4ff;
+            --text: #263238;
+            --sub-text: #607d8b;
+            --border: #e3e8ed;
+            --background: #f6f9fc;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Noto Sans JP",
+                "Hiragino Kaku Gothic ProN",
+                "Yu Gothic",
+                Meiryo,
+                sans-serif;
+            color: var(--text);
+            background: var(--background);
+            line-height: 1.8;
+        }
+
+        /* Header */
+        .header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+        }
+
+        .logo-mark {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: var(--primary);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .header-link {
+            color: var(--sub-text);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .header-link:hover {
+            color: var(--primary);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg,
+                    #eaf4ff 0%,
+                    #f8fbff 100%);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-inner {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 56px 24px 52px;
+        }
+
+        .hero-label {
+            display: inline-block;
+            margin-bottom: 14px;
+            padding: 5px 12px;
+            border-radius: 999px;
+            background: #dceeff;
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: clamp(28px, 5vw, 40px);
+            line-height: 1.4;
+            letter-spacing: 0.02em;
+        }
+
+        .hero p {
+            margin: 14px 0 0;
+            color: var(--sub-text);
+            font-size: 15px;
+        }
+
+        /* Main */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+
+        .content-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 4px 18px rgba(38, 50, 56, 0.04);
+        }
+
+        .section {
+            padding: 32px 36px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section h2 {
+            position: relative;
+            margin: 0 0 18px;
+            padding-left: 16px;
+            font-size: 21px;
+            line-height: 1.5;
+        }
+
+        .section h2::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 4px;
+            width: 4px;
+            height: calc(100% - 8px);
+            border-radius: 4px;
+            background: var(--primary);
+        }
+
+        .section p {
+            margin: 0 0 14px;
+        }
+
+        .section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .section ol,
+        .section ul {
+            margin: 10px 0 0;
+            padding-left: 24px;
+        }
+
+        .section li {
+            margin-bottom: 7px;
+        }
+
+        .section li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Information box */
+        .info-box {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 12px;
+            background: var(--primary-light);
+            border: 1px solid #d5eaff;
+        }
+
+        .info-box strong {
+            color: var(--primary);
+        }
+
+        /* Contact */
+        .contact {
+            margin-top: 20px;
+            padding: 22px;
+            border-radius: 12px;
+            background: #f8fafc;
+            border: 1px solid var(--border);
+        }
+
+        .contact-row {
+            display: flex;
+            gap: 16px;
+            padding: 10px 0;
+        }
+
+        .contact-label {
+            width: 110px;
+            flex-shrink: 0;
+            color: var(--sub-text);
+            font-weight: 600;
+        }
+
+        .contact-value {
+            word-break: break-word;
+        }
+
+        .contact-value a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .contact-value a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            padding: 30px 24px;
+            text-align: center;
+            color: var(--sub-text);
+            font-size: 13px;
+        }
+
+        /* Mobile */
+        @media (max-width: 640px) {
+
+            .header-inner {
+                padding: 16px 18px;
+            }
+
+            .logo {
+                font-size: 21px;
+            }
+
+            .logo-mark {
+                width: 32px;
+                height: 32px;
+                border-radius: 9px;
+            }
+
+            .header-link {
+                font-size: 13px;
+            }
+
+            .hero-inner {
+                padding: 42px 20px 38px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .container {
+                padding: 24px 14px 50px;
+            }
+
+            .content-card {
+                border-radius: 14px;
+            }
+
+            .section {
+                padding: 26px 20px;
+            }
+
+            .section h2 {
+                font-size: 19px;
+            }
+
+            .section p,
+            .section li {
+                font-size: 14px;
+            }
+
+            .contact-row {
+                display: block;
+            }
+
+            .contact-label {
+                width: auto;
+                margin-bottom: 2px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header-inner">
+
+            <a href="/" class="logo">
+                <span class="logo-mark">M</span>
+                <span>MedQuick</span>
+            </a>
+
+            <a href="/" class="header-link">
+                MedQuick トップ
+            </a>
+
+        </div>
+    </header>
+
+
+    <section class="hero">
+        <div class="hero-inner">
+
+            <span class="hero-label">
+                PRIVACY
+            </span>
+
+            <h1>個人情報の取り扱い</h1>
+
+            <p>
+                MedQuickにおける個人情報および医療情報の取り扱いについてご案内します。
+            </p>
+
+        </div>
+    </section>
+
+
+    <main class="container">
+
+        <article class="content-card">
+
+            <section class="section">
+                <h2>1. 取り扱う情報</h2>
+
+                <p>
+                    MedQuick（以下「本アプリ」といいます。）では、
+                    利用者が自ら入力・登録した以下の情報を取り扱います。
+                </p>
+
+                <ul>
+                    <li>氏名</li>
+                    <li>生年月日</li>
+                    <li>血液型</li>
+                    <li>服用している薬に関する情報</li>
+                    <li>既往症・持病等に関する情報</li>
+                    <li>備考として登録した情報</li>
+                    <li>緊急連絡先に関する情報</li>
+                    <li>かかりつけ医療機関に関する情報</li>
+                    <li>その他、利用者が本アプリに登録した情報</li>
+                </ul>
+
+                <div class="info-box">
+                    これらには、健康状態や病歴等に関する情報が含まれる場合があります。
+                </div>
+            </section>
+
+
+            <section class="section">
+                <h2>2. 利用目的</h2>
+
+                <p>
+                    本アプリで登録された情報は、以下の目的で利用します。
+                </p>
+
+                <ol>
+                    <li>利用者本人が自身の医療情報を確認するため</li>
+                    <li>緊急時に、利用者が指定した相手へ医療情報を共有するため</li>
+                    <li>QRコードを利用した医療情報の共有・受け取りを行うため</li>
+                    <li>本アプリの機能を提供・維持するため</li>
+                    <li>本アプリに関するお問い合わせへの対応を行うため</li>
+                </ol>
+
+                <p>
+                    上記の目的以外で、登録された医療情報を利用することはありません。
+                </p>
+            </section>
+
+
+            <section class="section">
+                <h2>3. 情報の保存について</h2>
+
+                <p>
+                    本アプリに登録された医療情報は、原則として利用者の端末内に保存されます。
+                </p>
+
+                <p>
+                    本アプリでは、利用者が登録した医療情報を提供者が運営する
+                    サーバーへ自動的に送信して保存する仕組みを採用していません。
+                </p>
+            </section>
+
+
+            <section class="section">
+                <h2>4. QRコードによる情報共有について</h2>
+
+                <p>
+                    本アプリでは、登録された医療情報をQRコードとして出力し、
+                    別の端末で読み取って共有することができます。
+                </p>
+
+                <p>
+                    QRコードによる共有は利用者自身の操作によって行われます。
+                </p>
+
+                <p>
+                    利用者がQRコードを第三者に提示した場合、
+                    そのQRコードを読み取ることができる第三者に情報が提供される可能性があります。
+                </p>
+
+                <div class="info-box">
+                    QRコードを提示・共有する際は、共有する相手や周囲の状況を十分に確認してください。
+                </div>
+            </section>
+
+
+            <section class="section">
+                <h2>5. QRコードの読み取りについて</h2>
+
+                <p>
+                    本アプリのAndroid版では、QRコードの読み取りに
+                    Google Code Scannerを利用しています。
+                </p>
+
+                <p>
+                    Google Code Scannerを利用して読み取ったQRコードの内容は、
+                    本アプリが受け取り、医療情報の復号・登録等の処理に使用します。
+                </p>
+            </section>
+
+
+            <section class="section">
+                <h2>6. 第三者への提供</h2>
+
+                <p>
+                    本アプリの提供者は、利用者が登録した医療情報を、
+                    利用者の意図しない第三者へ販売、貸与または提供することはありません。
+                </p>
+
+                <p>
+                    ただし、法令に基づく場合、生命・身体または財産の保護のために必要がある場合など、
+                    法令上認められる場合を除きます。
+                </p>
+
+                <p>
+                    また、利用者自身がQRコード等を利用して第三者へ情報を共有した場合は、
+                    利用者自身による情報提供となります。
+                </p>
+            </section>
+
+
+            <section class="section">
+                <h2>7. 情報の安全管理</h2>
+
+                <p>
+                    本アプリでは、利用者の医療情報を保護するため、
+                    端末内に保存する情報の暗号化など、適切な安全管理措置を講じるよう努めます。
+                </p>
+
+                <p>
+                    ただし、利用者自身がQRコードを第三者へ提示した場合など、
+                    利用者自身の操作によって情報が第三者へ渡った場合については、
+                    本アプリ提供者がその後の第三者による情報の利用を管理することはできません。
+                </p>
+            </section>
+
+
+            <section class="section">
+                <h2>8. 利用者による情報の管理</h2>
+
+                <p>
+                    利用者は、本アプリの機能を利用して、
+                    登録した医療情報を編集または削除することができます。
+                </p>
+
+                <p>
+                    また、受け取った医療情報についても、
+                    本アプリの削除機能を利用して削除することができます。
+                </p>
+            </section>
+
+
+            <section class="section">
+                <h2>9. お問い合わせ</h2>
+
+                <p>
+                    本アプリにおける個人情報の取り扱いに関するお問い合わせは、
+                    以下の窓口までご連絡ください。
+                </p>
+
+                <div class="contact">
+
+                    <div class="contact-row">
+                        <div class="contact-label">運営者</div>
+                        <div class="contact-value">長尾芳人</div>
+                    </div>
+
+                    <div class="contact-row">
+                        <div class="contact-label">お問い合わせ</div>
+                        <div class="contact-value">
+                            <a href="mailto:flyawayten@gmail.com">
+                                flyawayten@gmail.com
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <section class="section">
+                <h2>10. 本ページの変更</h2>
+
+                <p>
+                    本ページの内容は、法令の改正や本アプリの機能変更等に応じて、
+                    必要に応じて変更することがあります。
+                </p>
+
+                <p>
+                    重要な変更がある場合には、本アプリまたは本Webサイト上でお知らせします。
+                </p>
+            </section>
+
+        </article>
+
+    </main>
+
+
+    <footer>
+        <div>制定日：2026年9月25日</div>
+        <div>最終更新日：2026年9月25日</div>
+        <div style="margin-top: 8px;">
+            © 2026 MedQuick
+        </div>
+    </footer>
+
+</body>
+
+</html>
+```
