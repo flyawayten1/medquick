@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MedQuick - もしもの時の医療情報アプリ</title>
+
+    <meta name="description" content="MedQuickは、もしもの時に必要な医療情報をすぐに確認・共有できる無料の医療情報アプリです。">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                "Noto Sans JP",
+                sans-serif;
+            color: #263238;
+            background: #f5f9fc;
+            line-height: 1.8;
+        }
+
+        header {
+            background: #1976d2;
+            color: white;
+            padding: 18px 20px;
+        }
+
+        .header-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg,
+                    #1976d2,
+                    #42a5f5);
+            color: white;
+            text-align: center;
+            padding: 80px 20px 90px;
+        }
+
+        .hero h1 {
+            margin: 0 0 20px;
+            font-size: 42px;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            margin: 0 auto;
+            max-width: 700px;
+            font-size: 18px;
+            line-height: 1.9;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        section {
+            margin-bottom: 55px;
+        }
+
+        h2 {
+            margin: 0 0 25px;
+            padding-left: 14px;
+            border-left: 5px solid #1976d2;
+            color: #1565c0;
+            font-size: 28px;
+        }
+
+        .lead {
+            font-size: 17px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .feature {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+        }
+
+        .feature h3 {
+            margin: 0 0 10px;
+            color: #1976d2;
+            font-size: 20px;
+        }
+
+        .feature p {
+            margin: 0;
+        }
+
+        .notice {
+            background: #e3f2fd;
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid #bbdefb;
+        }
+
+        .contact {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+        }
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 8px;
+            background: #1976d2;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .button:hover {
+            background: #1565c0;
+        }
+
+        .button.secondary {
+            background: white;
+            color: #1976d2;
+            border: 1px solid #1976d2;
+        }
+
+        footer {
+            background: #263238;
+            color: #cfd8dc;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #90caf9;
+        }
+
+        @media (max-width: 700px) {
+            .hero {
+                padding: 60px 20px 70px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-inner">
+            <div class="logo">MedQuick</div>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <h1>MedQuick</h1>
+            <p>
+                もしもの時に、必要な医療情報をすぐに確認・共有できるアプリ。
+                <br>
+                家族や大切な人のための医療情報を、スマートフォンに保存できます。
+            </p>
+        </section>
+
+        <div class="container">
+
+            <section>
+                <h2>MedQuickについて</h2>
+
+                <p class="lead">
+                    MedQuickは、緊急時などに必要となる医療情報を
+                    スマートフォンで管理するための無料アプリです。
+                </p>
+
+                <p>
+                    血液型、服用薬、既往症・健康状態、備考、緊急連絡先、
+                    医療機関などの情報を登録しておくことで、
+                    必要なときにすぐ確認できます。
+                </p>
+
+                <p>
+                    登録した医療情報は、QRコードを利用して
+                    家族や大切な人などに共有することもできます。
+                </p>
+            </section>
+
+            <section>
+                <h2>主な機能</h2>
+
+                <div class="features">
+
+                    <div class="feature">
+                        <h3>医療情報の管理</h3>
+                        <p>
+                            血液型、服用薬、既往症・健康状態、
+                            備考などの医療情報を登録・編集できます。
+                        </p>
+                    </div>
+
+                    <div class="feature">
+                        <h3>緊急連絡先</h3>
+                        <p>
+                            家族やその他の緊急連絡先を登録し、
+                            必要なときにすぐ確認できます。
+                        </p>
+                    </div>
+
+                    <div class="feature">
+                        <h3>医療機関の登録</h3>
+                        <p>
+                            通院している医療機関などの情報を
+                            登録しておくことができます。
+                        </p>
+                    </div>
+
+                    <div class="feature">
+                        <h3>QRコードで共有</h3>
+                        <p>
+                            登録した情報をQRコードで共有できます。
+                            受け取った情報はアプリ内で確認できます。
+                        </p>
+                    </div>
+
+                    <div class="feature">
+                        <h3>受け取った情報の管理</h3>
+                        <p>
+                            QRコードから受け取った医療情報を保存し、
+                            必要なプロフィールを切り替えて確認できます。
+                        </p>
+                    </div>
+
+                    <div class="feature">
+                        <h3>緊急提示モード</h3>
+                        <p>
+                            緊急時に医療情報を確認しやすいよう、
+                            画面を見やすく表示するモードを搭載しています。
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
+            <section>
+                <h2>情報の取り扱いについて</h2>
+
+                <div class="notice">
+                    <p>
+                        MedQuickでは、登録した医療情報をユーザーの端末上で
+                        管理することを基本としています。
+                    </p>
+
+                    <p>
+                        医療情報をQRコードで共有する場合は、
+                        ユーザー自身が共有操作を行う必要があります。
+                    </p>
+
+                    <p>
+                        詳しい情報の取り扱いについては、
+                        プライバシーポリシーをご確認ください。
+                    </p>
+                </div>
+
+                <div class="links">
+                    <a class="button secondary" href="privacy.html">
+                        プライバシーポリシー
+                    </a>
+                </div>
+            </section>
+
+            <section>
+                <h2>お問い合わせ</h2>
+
+                <div class="contact">
+                    <p>
+                        MedQuickに関するお問い合わせは、以下のメールアドレスまで
+                        お願いいたします。
+                    </p>
+
+                    <p>
+                        <strong>メール：</strong>
+                        <a href="mailto:flyawayten@gmail.com">
+                            flyawayten@gmail.com
+                        </a>
+                    </p>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>
+            MedQuick
+        </p>
+
+        <p>
+            <a href="privacypolicy.html">プライバシーポリシー</a>
+        </p>
+
+        <p>
+            © 2026 MedQuick
+        </p>
+    </footer>
+
+</body>
+
+</html>
